@@ -1,0 +1,26 @@
+{
+    "require": {
+       
+        "google/cloud-functions-framework": "^1.3",
+        "google/apiclient": "*",
+        "guzzlehttp/guzzle": "^7.3",
+        "google/apiclient-services": "*",
+        "php": ">= 7.4"
+       
+    },
+
+"scripts": {
+    "require_once __DIR__ .": "/vendor/autoload.php", 
+    "start": [
+       "Composer\\Config::disableProcessTimeout",
+       "FUNCTION_TARGET=helloHttp php -S localhost:${PORT:-8080} vendor/google/cloud-functions-framework/router.php"
+    ]
+},
+
+    
+"autoload":{
+    "psr-4":{
+        "Classes\\":"../class"
+    }
+}
+}
